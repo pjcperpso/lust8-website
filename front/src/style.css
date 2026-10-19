@@ -1,0 +1,339 @@
+/* ========== Design Tokens - Elev8 H2O Style ========== */
+:root {
+  /* Theme - Strawberry (default) */
+  --color-bg: #f8dcea;
+  --color-flavor: #dd5da2;
+  --color-flavor-dark: #c94a8e;
+  --color-flavor-light: #f5b8d6;
+  --color-text: #231f20;
+  --color-text-light: #6b6375;
+  --color-hover: #c94a8e;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-plaster: 'Plaster', cursive;
+  --font-outfit: 'Outfit', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme variants */
+.theme-pineapple {
+  --color-bg: #fdfbe4;
+  --color-flavor: #e5c000;
+  --color-flavor-dark: #c9a800;
+  --color-flavor-light: #f5e68a;
+  --color-hover: #c9a800;
+}
+
+.theme-peach {
+  --color-bg: #ffefd6;
+  --color-flavor: #f29520;
+  --color-flavor-dark: #d97e0f;
+  --color-flavor-light: #fccb8a;
+  --color-hover: #d97e0f;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-outfit);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.6s ease;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+}
+
+p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-flavor);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Plaster display font for hero titles */
+.font-plaster {
+  font-family: var(--font-plaster);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* ========== Utility Classes ========== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tracking-widest {
+  letter-spacing: 0.2em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.05em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* ========== Scroll Animation Classes ========== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* ========== Button Styles ========== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-flavor);
+  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+  color: var(--color-text);
+}
+
+.btn-primary svg {
+  width: 28px;
+  height: auto;
+  transition: transform var(--transition-base);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* ========== Page Transitions ========== */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* ========== Intro Loader ========== */
+.intro-loader {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.intro-loader .loader-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.intro-loader .loader-bg__inner {
+  flex: 1;
+  background-color: var(--color-flavor);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.intro-loader.active .loader-bg__inner {
+  transform: scaleY(1);
+}
+
+/* Stagger the bars */
+.intro-loader .loader-bg__inner:nth-child(1) { transition-delay: 0s; }
+.intro-loader .loader-bg__inner:nth-child(2) { transition-delay: 0.05s; }
+.intro-loader .loader-bg__inner:nth-child(3) { transition-delay: 0.1s; }
+.intro-loader .loader-bg__inner:nth-child(4) { transition-delay: 0.05s; }
+.intro-loader .loader-bg__inner:nth-child(5) { transition-delay: 0s; }
+
+.intro-loader.loaded .loader-bg__inner:nth-child(1) { transition-delay: 0.4s; transform: scaleY(0); }
+.intro-loader.loaded .loader-bg__inner:nth-child(2) { transition-delay: 0.35s; transform: scaleY(0); }
+.intro-loader.loaded .loader-bg__inner:nth-child(3) { transition-delay: 0.3s; transform: scaleY(0); }
+.intro-loader.loaded .loader-bg__inner:nth-child(4) { transition-delay: 0.35s; transform: scaleY(0); }
+.intro-loader.loaded .loader-bg__inner:nth-child(5) { transition-delay: 0.4s; transform: scaleY(0); }
+
+/* ========== Gooey Loader ========== */
+.gooey-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  z-index: 101;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.gooey-loader.active {
+  opacity: 1;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* ========== Selection ========== */
+::selection {
+  background-color: var(--color-flavor);
+  color: var(--color-white);
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-flavor);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-flavor-dark);
+}

@@ -1,0 +1,13 @@
+{
+  "name": "lust8-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LUST8 Adult Wellness E-commerce Backend API",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

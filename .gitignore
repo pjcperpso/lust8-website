@@ -1,0 +1,111 @@
+# ============================================================
+# Dependencies
+# ============================================================
+
+# Node.js
+node_modules/
+**/node_modules/
+
+# Python virtual environments
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Python package files
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+
+# ============================================================
+# Environment & Config
+# ============================================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Logs
+# ============================================================
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================================
+# Build outputs
+# ============================================================
+
+# Vite / Vue build output
+dist/
+dist-ssr/
+**/dist/
+**/dist-ssr/
+
+# Coverage directory
+coverage/
+*.lcov
+
+# ============================================================
+# Database
+# ============================================================
+
+*.db
+*.sqlite
+*.sqlite3
+lust8.db
+
+# ============================================================
+# Screenshots & Design reference images
+# ============================================================
+
+*.png
+!**/src/assets/**/*.png
+!**/public/**/*.png
+
+# ============================================================
+# Misc
+# ============================================================
+
+*.local
+.vite/
+**/.vite/
+.temp/
+.cache/
+.parcel-cache/

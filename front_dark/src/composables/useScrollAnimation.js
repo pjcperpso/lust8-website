@@ -1,0 +1,42 @@
+import { onMounted, onUnmounted } from 'vue'
+
+export function useScrollAnimation() {
+  let observer = null
+
+  onMounted(() => {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    )
+
+    const elements = document.querySelectorAll('.fade-in-up, .fade-in')
+    elements.forEach((el) => observer.observe(el))
+  })
+
+  onUnmounted(() => {
+    if (observer) {
+      observer.disconnect()
+    }
+  })
+
+  const refreshObserver = () => {
+    if (observer) {
+      observer.disconnect()
+    }
+    setTimeout(() => {
+      const elements = document.querySelectorAll('.fade-in-up, .fade-in')
+      elements.forEach((el) => observer?.observe(el))
+    }, 100)
+  }
+
+  return { refreshObserver }
+}
